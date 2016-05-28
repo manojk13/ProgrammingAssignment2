@@ -20,6 +20,7 @@ makeCacheMatrix <- function(x = matrix()) {
 
 
 ## Write a short comment describing this function
+##This function computes the inverse of the special matrix created by the above function "makeCacheMatrix". If the inverse has already ##been calculated (and the matrix has not changed), then this function retrieves the inverse from the cache
 
 cacheSolve <- function(x, ...) {
         ## Return a matrix that is the inverse of 'x'
@@ -30,8 +31,8 @@ cacheSolve <- function(x, ...) {
     return(inv_m)
   }
   data <- x$get()
-  if(nrow(data)==ncol(data)) {
-    #unlist(determinant(data))
+  if(nrow(data)==ncol(data)) 
+  {
     if(det(data)==0){
       message("Determinant Value is 0, Matrix not invertible !!")
     } else {
